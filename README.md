@@ -34,7 +34,8 @@ Fitur	Deskripsi
 🔒 PIN protection	Proteksi perintah berbahaya seperti delete & SSL renew
 ⚙️ Instalasi Otomatis
 1️⃣ Jalankan installer:
-wget -O setup_vps_manager.sh https://raw.githubusercontent.com/openai-chatgpt-id/vps-manager/main/setup_vps_manager.sh
+
+wget -O setup_vps_manager.sh https://raw.githubusercontent.com/akmalfadli/setup-vps-manager/refs/heads/main/setup_vps_manager.sh
 chmod +x setup_vps_manager.sh
 sudo bash setup_vps_manager.sh
 
@@ -117,21 +118,6 @@ Command	Deskripsi
 
 🔒 PIN default = 1234 (ubah di /etc/systemd/system/telegram-bot.service pada baris Environment="BOT_PIN=1234")
 
-🧠 DNS Configuration
-
-Setiap domain harus diarahkan ke IP VPS kamu.
-Tambahkan record di panel domain seperti ini:
-
-Type	Name	Value	TTL
-A	@	IP_VPS_KAMU	3600
-A	www	IP_VPS_KAMU	3600
-
-Cek apakah DNS sudah aktif:
-
-dig +short example.com
-
-
-Jika hasilnya adalah IP VPS kamu, maka siap untuk SSL dan deploy 🎉
 
 
 🧾 Logging & Monitoring
@@ -148,7 +134,7 @@ nginx -t && systemctl reload nginx	Tes dan reload Nginx
 sqlite3 /var/www/sites.db "SELECT * FROM sites;"	Cek daftar website di DB
 🧑‍💻 Author & Lisensi
 
-Author: Akmal Fadli)
+Author: Akmal Fadli (ChatGPT-assisted)
 Lisensi: MIT — bebas digunakan dan dimodifikasi.
 
 ⚠️ Script ini dirancang untuk VPS Ubuntu/Debian dan tidak direkomendasikan dijalankan di shared hosting.
