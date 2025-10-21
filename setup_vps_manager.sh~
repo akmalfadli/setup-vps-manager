@@ -18,21 +18,8 @@ echo "🚀 Starting VPS Website Manager Setup..."
 # 1️⃣ Update and install dependencies
 # ------------------------------------------------------
 echo "📦 Installing dependencies..."
-
 apt update -y
-apt install -y software-properties-common ca-certificates lsb-release apt-transport-https
-add-apt-repository ppa:ondrej/php -y
-
-apt update -y
-apt install -y nginx mysql-server  php-sqlite3 sqlite3 certbot python3-certbot-nginx curl unzip git
-apt install -y php7.4 php7.4-cli php7.4-fpm php7.4-common php7.4-mbstring php7.4-xml php7.4-mysql php7.4-curl php7.4-zip php7.4-bcmath
-
-apt install -y php8.1 php8.1-cli php8.1-fpm php8.1-common php8.1-mbstring php8.1-xml php8.1-mysql php8.1-curl php8.1-zip php8.1-bcmath
-
-apt install -y php8.2 php8.2-cli php8.2-fpm php8.2-common php8.2-mbstring php8.2-xml php8.2-mysql php8.2-curl php8.2-zip php8.2-bcmath
-
-apt install -y php8.4 php8.4-cli php8.4-fpm php8.4-common php8.4-mbstring php8.4-xml php8.4-mysql php8.4-curl php8.4-zip php8.4-bcmath
-
+apt install -y nginx mysql-server php-fpm php-mysql php-cli php-zip php-curl php-sqlite3 sqlite3 certbot python3-certbot-nginx curl unzip git
 
 # ------------------------------------------------------
 # 2️⃣ Setup directories
