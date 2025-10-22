@@ -99,7 +99,7 @@ TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID}"
 GDRIVE_FOLDER_ID="${GDRIVE_FOLDER_ID}"
 PHP_SOCKET="${PHP_SOCKET}"
 
-$(curl -s https://raw.githubusercontent.com/openai-chatgpt-id/vps-manager/main/create_website_core_v3.sh || echo "# Core script missing! Please paste manually.")
+$(curl -s https://raw.githubusercontent.com/akmalfadli/setup-vps-manager/refs/heads/main/create_website.sh || echo "# Core script missing! Please paste manually.")
 EOF
 
 chmod +x /var/www/create_website.sh
