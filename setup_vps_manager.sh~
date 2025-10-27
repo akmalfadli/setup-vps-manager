@@ -24,7 +24,7 @@ apt install -y software-properties-common ca-certificates lsb-release apt-transp
 add-apt-repository ppa:ondrej/php -y
 
 apt update -y
-apt install -y nginx mariadb-server  php-sqlite3 sqlite3 certbot python3-certbot-nginx curl unzip git
+apt install -y nginx mysql-server  php-sqlite3 sqlite3 certbot python3-certbot-nginx curl unzip git
 apt install -y php7.4 php7.4-cli php7.4-fpm php7.4-common php7.4-mbstring php7.4-xml php7.4-mysql php7.4-curl php7.4-zip php7.4-bcmath
 
 apt install -y php8.1 php8.1-cli php8.1-fpm php8.1-common php8.1-mbstring php8.1-xml php8.1-mysql php8.1-curl php8.1-zip php8.1-bcmath
