@@ -145,7 +145,7 @@ function create_site() {
 server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
-    root ${SITE_PATH}/public;
+    root ${SITE_PATH};
 
     index index.php index.html;
 
@@ -421,19 +421,47 @@ fi
 # ======================================================
 function main_menu() {
   check_db
-  PS3="Choose an option: "
-  options=("Create Website" "Migrate Website" "Renew SSL" "Edit Website Config" "Backup Website" "Delete Website" "Exit")
-  select opt in "${options[@]}"; do
-    case $opt in
-      "Create Website") create_site ;;
-      "Migrate Website") migrate_site ;;
-      "Renew SSL") renew_ssl ;;
-      "Edit Website Config") edit_config ;;
-      "Backup Website") backup_site ;;
-      "Delete Website") delete_site ;;
-      "Exit") exit ;;
-      *) echo "Invalid option";;
+  
+  while true; do
+    echo ""
+    echo "=========================================="
+    echo "     AUTO WEBSITE MANAGER v3.1"
+    echo "=========================================="
+    echo "1) Create Website"
+    echo "2) Migrate Website"
+    echo "3) Renew SSL"
+    echo "4) Edit Website Config"
+    echo "5) Backup Website"
+    echo "6) Delete Website"
+    echo "7) List All Sites"
+    echo "8) Exit"
+    echo "=========================================="
+    read -p "Choose an option (1-8): " choice
+    
+    case $choice in
+      1) create_site ;;
+      2) migrate_site ;;
+      3) renew_ssl ;;
+      4) edit_config ;;
+      5) backup_site ;;
+      6) delete_site ;;
+      7) 
+        echo ""
+        echo "=== ALL WEBSITES ==="
+        list_sites
+        ;;
+      8) 
+        echo "Goodbye!"
+        exit 
+        ;;
+      *) 
+        echo "❌ Invalid option. Please choose 1-8"
+        ;;
     esac
+    
+    # Pause before showing menu again
+    echo ""
+    read -p "Press Enter to continue..."
   done
 }
 
